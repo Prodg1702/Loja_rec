@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoService } from '../info.service';
 
 @Component({
   selector: 'app-produtos',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdutosPage implements OnInit {
 
-  constructor() { }
+   public TodosProdutos : any
+
+  constructor(private objinfoService : InfoService) { }
 
   ngOnInit() {
+    this.TodosProdutos = this.objinfoService.EnviarTodosProdutos()
+    }
   }
 
-}
+
